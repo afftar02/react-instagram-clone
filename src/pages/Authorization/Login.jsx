@@ -54,7 +54,7 @@ function Login() {
                         <input type="email" placeholder="Email" onChange={(event) => setEmail(event.target.value)} />
                         <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
                     </div>
-                    <BlueButton value="Sign in" onClick={onSignIn} />
+                    <BlueButton value="Sign in" onClick={onSignIn} width={268} height={40} />
                 </div>
                 <div className={styles.errorMessage} style={{ opacity: errorMessageOpacity }}>
                     <span>{errorMessage}</span>

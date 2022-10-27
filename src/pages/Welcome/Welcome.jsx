@@ -16,7 +16,7 @@ function Welcome() {
           <span className={styles.firstText}>Happening now</span>
           <span className={styles.secondText}>Join Twitter today.</span>
           <Link style={{ textDecoration: 'none' }} to='/registration'>
-            <BlueButton value="Sign up with phone or email" />
+            <BlueButton value="Sign up with phone or email" width={268} height={40} />
           </Link>
           <div className={styles.signInContainer}>
             <div className={styles.textContainer}>

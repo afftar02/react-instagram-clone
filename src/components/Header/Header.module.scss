@@ -1,0 +1,33 @@
+header {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    .headerContainer {
+        width: 251px;
+        height: 100%;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 12px;
+        .topContainer {
+            .logoContainer {
+                cursor: pointer;
+                width: 52px;
+                height: 52px;
+                margin: 5px 0;
+                border-radius: 9999px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                    background-color: rgba(29, 155, 240, 0.1);
+                }
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+}

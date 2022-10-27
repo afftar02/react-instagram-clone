@@ -79,7 +79,7 @@ function Registration() {
                         <input type="email" className={emailPlaceholderClass} placeholder={emailPlaceholder} value={email} onChange={(event) => setEmail(event.target.value)} />
                         <input type="password" className={passwordPlaceholderClass} placeholder={passwordPlaceholder} value={password} onChange={(event) => setPassword(event.target.value)} />
                     </div>
-                    <BlueButton value="Sign up" onClick={onSignUp} />
+                    <BlueButton value="Sign up" onClick={onSignUp} width={268} height={40} />
                 </div>
             </div>
         </>
