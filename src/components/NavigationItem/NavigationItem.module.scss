@@ -1,0 +1,36 @@
+.itemContainer {
+    cursor: pointer;
+    padding: 4px 0;
+    width: 100%;
+    &:hover {
+        .item {
+            background-color: rgba(15, 20, 25, 0.1);
+        }
+    }
+    .item {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        border-radius: 9999px;
+        transition: background-color 0.2s ease-in-out;
+        .imageContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: 1.75rem;
+            }
+        }
+        .chosenContainer {
+            font-weight: 700;
+        }
+        .labelContainer {
+            margin-right: 16px;
+            margin-left: 20px;
+            line-height: 24px;
+            font-size: 20px;
+            font-family: "Roboto Serif", serif;
+        }
+    }
+}
