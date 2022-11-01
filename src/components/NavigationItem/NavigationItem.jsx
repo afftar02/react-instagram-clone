@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './NavigationItem.module.scss';
 
-function NavigationItem({ image, label, isChosen }) {
+function NavigationItem({ icon, label, isChosen, onClick }) {
     return (
-        <div className={styles.itemContainer}>
+        <div className={styles.itemContainer} onClick={onClick}>
             <div className={styles.item}>
                 <div className={styles.imageContainer}>
-                    <img src={image} alt='' /> {/* //TODO:add svg images into nav */}
+                    {icon}
                 </div>
                 <div className={isChosen ? `${styles.chosenContainer} ${styles.labelContainer}` : styles.labelContainer}>
                     <span>{label}</span>
