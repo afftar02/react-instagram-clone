@@ -58,6 +58,7 @@ function Header() {
 
     function onNavItemClick(item) {
         console.log(item);
+        //TODO: add changing menu
     }
 
     return (
