@@ -1,1 +1,1 @@
-# React part of twitter clone web app
+# React part of instagram clone web app
