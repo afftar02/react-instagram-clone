@@ -12,53 +12,54 @@ import { ReactComponent as ListsSvg } from './assets/lists.svg';
 import { ReactComponent as ProfileSvg } from './assets/profile.svg';
 import { ReactComponent as MoreSvg } from './assets/more.svg';
 
+const navItems = [
+    {
+        id: 1,
+        icon: <HomeSvg />,
+        label: 'Home'
+    },
+    {
+        id: 2,
+        icon: <ExploreSvg />,
+        label: 'Explore'
+    },
+    {
+        id: 3,
+        icon: <NotificationsSvg />,
+        label: 'Notifications'
+    },
+    {
+        id: 4,
+        icon: <MessagesSvg />,
+        label: 'Messages'
+    },
+    {
+        id: 5,
+        icon: <BookmarksSvg />,
+        label: 'Bookmarks'
+    },
+    {
+        id: 6,
+        icon: <ListsSvg />,
+        label: 'Lists'
+    },
+    {
+        id: 7,
+        icon: <ProfileSvg />,
+        label: 'Profile'
+    },
+    {
+        id: 8,
+        icon: <MoreSvg />,
+        label: 'More'
+    }
+];
+
 function Header() {
-    const [navItems, setNavItems] = React.useState([
-        {
-            icon: <HomeSvg />,
-            label: 'Home',
-            isChosen: true
-        },
-        {
-            icon: <ExploreSvg />,
-            label: 'Explore',
-            isChosen: false
-        },
-        {
-            icon: <NotificationsSvg />,
-            label: 'Notifications',
-            isChosen: false
-        },
-        {
-            icon: <MessagesSvg />,
-            label: 'Messages',
-            isChosen: false
-        },
-        {
-            icon: <BookmarksSvg />,
-            label: 'Bookmarks',
-            isChosen: false
-        },
-        {
-            icon: <ListsSvg />,
-            label: 'Lists',
-            isChosen: false
-        },
-        {
-            icon: <ProfileSvg />,
-            label: 'Profile',
-            isChosen: false
-        },
-        {
-            icon: <MoreSvg />,
-            label: 'More',
-            isChosen: false
-        }
-    ]);
+    const [chosen, setChosen] = React.useState(1);
 
     function onNavItemClick(item) {
-        console.log(item);
-        //TODO: add changing menu
+        setChosen(item.id);
     }
 
     return (
@@ -73,7 +74,7 @@ function Header() {
                             {navItems.map((item) =>
                                 <NavigationItem icon={item.icon}
                                     label={item.label}
-                                    isChosen={item.isChosen}
+                                    isChosen={item.id === chosen ? true : false}
                                     onClick={() => onNavItemClick(item)} />)}
                         </nav>
                     </div>

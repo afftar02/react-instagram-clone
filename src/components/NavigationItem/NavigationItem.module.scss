@@ -22,15 +22,17 @@
                 width: 1.75rem;
             }
         }
-        .chosenContainer {
-            font-weight: 700;
-        }
         .labelContainer {
             margin-right: 16px;
             margin-left: 20px;
             line-height: 24px;
             font-size: 20px;
             font-family: "Roboto Serif", serif;
+        }
+    }
+    .chosenItem {
+        .labelContainer {
+            font-weight: 700;
         }
     }
 }
