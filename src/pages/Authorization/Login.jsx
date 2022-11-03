@@ -21,7 +21,7 @@ function Login() {
 
     async function onSignIn() {
         try {
-            const { data } = await axios.post('http://localhost:4444/auth/login', { email, password });
+            const { data } = await axios.post('http://localhost:4444/api/auth/login', { email, password });
             dispatch(setToken("Bearer " + data.token));
             navigate('/home');
         } catch (err) {
