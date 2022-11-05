@@ -1,30 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,600&display=swap');
+
 .itemContainer {
     cursor: pointer;
     padding: 4px 0;
     width: 100%;
+    border-radius: 9999px;
+    transition: background-color 0.2s ease-in-out;
     &:hover {
-        .item {
-            background-color: rgba(15, 20, 25, 0.1);
-        }
+        background-color: rgba(159, 161, 167, 0.1);
     }
     .item {
-        width: fit-content;
         display: flex;
         align-items: center;
         padding: 12px;
-        border-radius: 9999px;
-        transition: background-color 0.2s ease-in-out;
+        margin: 8px 0;
         .imageContainer {
             display: flex;
             align-items: center;
             justify-content: center;
-            svg {
-                width: 1.75rem;
-            }
         }
         .labelContainer {
-            margin-right: 16px;
-            margin-left: 20px;
+            padding-left: 16px;
             line-height: 24px;
             font-size: 20px;
             font-family: "Roboto Serif", serif;
@@ -32,7 +28,7 @@
     }
     .chosenItem {
         .labelContainer {
-            font-weight: 700;
+            font-weight: 600;
         }
     }
 }

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './Registration.module.scss';
-import Welcome from '../Welcome/Welcome';
 import BlueButton from '../../components/BlueButton/BlueButton';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -60,29 +59,23 @@ function Registration() {
     }
 
     return (
-        <>
-            <Welcome />
-            <div className={styles.overlay}>
-                <div className={styles.container}>
-                    <Link to='/'>
-                        <svg className={styles.cross} viewBox="0 0 24 24" aria-hidden="true" width={20} height={20}>
-                            <g>
-                                <path d="M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z"></path>
-                            </g>
-                        </svg>
-                    </Link>
-                    <div className={styles.headText}>
-                        <h1>Registration</h1>
-                    </div>
-                    <div className={styles.inputContainer} >
-                        <input type="text" className={namePlaceholderClass} placeholder={namePlaceholder} value={name} onChange={(event) => setName(event.target.value)} />
-                        <input type="email" className={emailPlaceholderClass} placeholder={emailPlaceholder} value={email} onChange={(event) => setEmail(event.target.value)} />
-                        <input type="password" className={passwordPlaceholderClass} placeholder={passwordPlaceholder} value={password} onChange={(event) => setPassword(event.target.value)} />
-                    </div>
-                    <BlueButton value="Sign up" onClick={onSignUp} width={268} height={40} />
+        <div className={styles.overlay}>
+            <div className={styles.container}>
+                <img width={200} src='img/instagram_logo.png' alt='' />
+                <div className={styles.inputContainer} >
+                    <input type="text" className={namePlaceholderClass} placeholder={namePlaceholder} value={name} onChange={(event) => setName(event.target.value)} />
+                    <input type="email" className={emailPlaceholderClass} placeholder={emailPlaceholder} value={email} onChange={(event) => setEmail(event.target.value)} />
+                    <input type="password" className={passwordPlaceholderClass} placeholder={passwordPlaceholder} value={password} onChange={(event) => setPassword(event.target.value)} />
                 </div>
+                <BlueButton value="Register" onClick={onSignUp} width={268} height={40} margin='50px 0 0' />
             </div>
-        </>
+            <div className={styles.loginContainer}>
+                <span>Have an account?</span>
+                <Link to='/login' style={{textDecoration: 'none'}}>
+                    <span className={styles.loginLink}>Login</span>
+                </Link>
+            </div>
+        </div>
     )
 };
 

@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz@8..144&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,700&display=swap");
+
+.navContainer {
+    width: 280px;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px 12px 20px 12px;
+    border-right: 1px solid #efefef;
+    .topContainer {
+        .logoContainer {
+            cursor: pointer;
+            margin: 40px 20px;
+            svg {
+                width: 130px;
+            }
+        }
+        .menuContainer {
+            width: 100%;
+            font-size: 15px;
+            nav {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+}

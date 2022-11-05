@@ -1,10 +1,9 @@
 import React from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
-import Login from './pages/Authorization/Login';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 import Registration from './pages/Registration/Registration';
-import Welcome from './pages/Welcome/Welcome';
-import Header from './components/Header/Header';
+import Navigation from './components/Navigation/Navigation';
 
 function App() {
   const location = useLocation();
@@ -12,12 +11,12 @@ function App() {
   return (
     <div className="wrapper">
       {
-        location.pathname !== "/" && location.pathname !== "/registration" && location.pathname !== "/login" && <Header />
+        location.pathname !== "/registration" && location.pathname !== "/login" && <Navigation />
       }
       <Routes>
         <Route
           exact path="/"
-          element={<Welcome />}
+          element={<Navigate to="/login" />}
         />
         <Route
           exact path="/registration"
