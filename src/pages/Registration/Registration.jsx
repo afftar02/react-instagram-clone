@@ -2,12 +2,14 @@ import React from 'react';
 import styles from './Registration.module.scss';
 import { Link } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm/AuthForm';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import ConfirmationButton from '../../components/ConfirmationButton/ConfirmationButton';
+import { useDispatch } from 'react-redux';
+import { register } from '../../redux/slices/authSlice';
 
 function Registration() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [form, setForm] = React.useState({});
 
@@ -20,11 +22,12 @@ function Registration() {
 
     async function handleSignUp() {
         try {
-            // const { data } = await axios.post('http://localhost:4444/api/auth/register', { firstName, secondName, email, password });
-            // dispatch(setToken("Bearer " + data.token));
+            const response = await dispatch(register(form));
+            localStorage.setItem("access_token", response.accessToken);
+            localStorage.setItem("refresh_token", response.refreshToken);
             navigate('/home');
         } catch (err) {
-            setErrorMessage(err.response.data.message);
+            setErrorMessage('Incorrect registration data');
             setErrorMessageOpacity('1');
 
             setTimeout(() => {

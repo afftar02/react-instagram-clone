@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import styles from './Login.module.scss';
 import ConfirmationButton from '../../components/ConfirmationButton/ConfirmationButton';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm/AuthForm';
+import { useDispatch } from 'react-redux';
+import { login } from '../../redux/slices/authSlice';
 
 function Login() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [form, setForm] = React.useState({});
 
@@ -19,11 +21,12 @@ function Login() {
 
     async function handleSignIn() {
         try {
-            // const { data } = await axios.post('http://localhost:4444/api/auth/login', { email, password });
-            // dispatch(setToken("Bearer " + data.token));
+            const response = await dispatch(login(form));
+            localStorage.setItem("access_token", response.accessToken);
+            localStorage.setItem("refresh_token", response.refreshToken);
             navigate('/home');
         } catch (err) {
-            setErrorMessage(err.response.data.message);
+            setErrorMessage('Incorrect email or password');
             setErrorMessageOpacity('1');
 
             setTimeout(() => {
