@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './Registration.module.scss';
-import BlueButton from '../../components/BlueButton/BlueButton';
+import ConfirmationButton from '../../components/ConfirmationButton/ConfirmationButton';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Registration() {
@@ -63,7 +63,7 @@ function Registration() {
                     <input type="email" className={emailPlaceholderClass} placeholder={emailPlaceholder} value={email} onChange={(event) => setEmail(event.target.value)} />
                     <input type="password" className={passwordPlaceholderClass} placeholder={passwordPlaceholder} value={password} onChange={(event) => setPassword(event.target.value)} />
                 </div>
-                <BlueButton value="Register" onClick={onSignUp} width={268} height={40} margin='50px 0 0' />
+                <ConfirmationButton value="Register" onClick={onSignUp} />
             </div>
             <div className={styles.loginContainer}>
                 <span>Have an account?</span>

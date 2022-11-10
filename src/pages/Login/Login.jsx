@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './Login.module.scss';
-import BlueButton from '../../components/BlueButton/BlueButton';
+import ConfirmationButton from '../../components/ConfirmationButton/ConfirmationButton';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -37,7 +37,7 @@ function Login() {
                     <input type="email" placeholder="Email" onChange={(event) => setEmail(event.target.value)} />
                     <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
                 </div>
-                <BlueButton value="Login" onClick={onSignIn} width={268} height={40} margin='50px 0 0' />
+                <ConfirmationButton value="Login" onClick={onSignIn} />
             </div>
             <div className={styles.registerContainer}>
                 <span>Don't have an account yet?</span>
