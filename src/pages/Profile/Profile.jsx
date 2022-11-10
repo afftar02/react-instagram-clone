@@ -1,16 +1,16 @@
 import React from 'react';
-import styles from './Home.module.scss';
+import styles from './Profile.module.scss';
 import Navigation from '../../components/Navigation/Navigation';
 
-function Home() {
+function Profile() {
   return (
     <>
       <Navigation />
-      <div className={styles.homeContainer}>
+      <div className={styles.profileContainer}>
 
       </div>
     </>
   )
 };
 
-export default Home;
+export default Profile;

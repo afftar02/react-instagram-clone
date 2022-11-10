@@ -3,13 +3,9 @@ import axios from 'axios';
 import styles from './Registration.module.scss';
 import BlueButton from '../../components/BlueButton/BlueButton';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { setToken } from '../../redux/slices/tokenSlice';
 
 function Registration() {
     const navigate = useNavigate();
-
-    const dispatch = useDispatch();
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -25,8 +21,8 @@ function Registration() {
 
     async function onSignUp() {
         try {
-            const { data } = await axios.post('http://localhost:4444/api/auth/register', { name, email, password });
-            dispatch(setToken("Bearer " + data.token));
+            // const { data } = await axios.post('http://localhost:4444/api/auth/register', { name, email, password });
+            // dispatch(setToken("Bearer " + data.token));
             navigate('/home');
         } catch (err) {
             handleIncorrectInput(err.response.data);

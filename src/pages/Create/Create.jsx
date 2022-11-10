@@ -1,16 +1,16 @@
 import React from 'react';
-import styles from './Home.module.scss';
+import styles from './Create.module.scss';
 import Navigation from '../../components/Navigation/Navigation';
 
-function Home() {
+function Create() {
   return (
     <>
       <Navigation />
-      <div className={styles.homeContainer}>
+      <div className={styles.createContainer}>
 
       </div>
     </>
   )
 };
 
-export default Home;
+export default Create;

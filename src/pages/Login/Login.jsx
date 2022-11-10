@@ -3,13 +3,9 @@ import axios from 'axios';
 import styles from './Login.module.scss';
 import BlueButton from '../../components/BlueButton/BlueButton';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { setToken } from '../../redux/slices/tokenSlice';
 
 function Login() {
     const navigate = useNavigate();
-
-    const dispatch = useDispatch();
 
     const [errorMessageOpacity, setErrorMessageOpacity] = useState('0');
 
@@ -20,8 +16,8 @@ function Login() {
 
     async function onSignIn() {
         try {
-            const { data } = await axios.post('http://localhost:4444/api/auth/login', { email, password });
-            dispatch(setToken("Bearer " + data.token));
+            // const { data } = await axios.post('http://localhost:4444/api/auth/login', { email, password });
+            // dispatch(setToken("Bearer " + data.token));
             navigate('/home');
         } catch (err) {
             setErrorMessage(err.response.data.message);

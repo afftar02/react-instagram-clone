@@ -1,42 +1,34 @@
 import React from 'react';
 import styles from './Navigation.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import NavigationItem from '../NavigationItem/NavigationItem';
 
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
-import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+import { HomeOutlined, HomeRounded, AddBoxOutlined, AddBoxRounded, AccountCircleOutlined, AccountCircleRounded } from '@mui/icons-material';
 
 const navItems = [
     {
-        id: 1,
-        icon: <HomeOutlinedIcon sx={{ fontSize: 35 }} />,
-        chosenIcon: <HomeRoundedIcon sx={{ fontSize: 35 }} />,
+        url: '/home',
+        icon: <HomeOutlined sx={{ fontSize: 35 }} />,
+        chosenIcon: <HomeRounded sx={{ fontSize: 35 }} />,
         label: 'Home'
     },
     {
-        id: 2,
-        icon: <AddBoxOutlinedIcon sx={{ fontSize: 35 }} />,
-        chosenIcon: <AddBoxRoundedIcon sx={{ fontSize: 35 }} />,
+        url: '/create',
+        icon: <AddBoxOutlined sx={{ fontSize: 35 }} />,
+        chosenIcon: <AddBoxRounded sx={{ fontSize: 35 }} />,
         label: 'Create'
     },
     {
-        id: 3,
-        icon: <AccountCircleOutlinedIcon sx={{ fontSize: 35 }} />,
-        chosenIcon: <AccountCircleRoundedIcon sx={{ fontSize: 35 }} />,
+        url: '/profile',
+        icon: <AccountCircleOutlined sx={{ fontSize: 35 }} />,
+        chosenIcon: <AccountCircleRounded sx={{ fontSize: 35 }} />,
         label: 'Profile'
     }
 ];
 
 function Navigation() {
-    const [chosen, setChosen] = React.useState(1);
-
-    function onNavItemClick(item) {
-        setChosen(item.id);
-    }
+    const location = useLocation();
+    const currentUrl = location.pathname;
 
     return (
         <div className={styles.navContainer}>
@@ -51,10 +43,11 @@ function Navigation() {
                 <div className={styles.menuContainer}>
                     <nav>
                         {navItems.map((item) =>
-                            <NavigationItem icon={item.id === chosen ? item.chosenIcon : item.icon}
+                            <NavigationItem
+                                icon={item.url === currentUrl ? item.chosenIcon : item.icon}
                                 label={item.label}
-                                isChosen={item.id === chosen ? true : false}
-                                onClick={() => onNavItemClick(item)} />)}
+                                url={item.url}
+                                isChosen={item.url === currentUrl ? true : false} />)}
                     </nav>
                 </div>
             </div>
