@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './NavigationItem.module.scss';
 
-function NavigationItem({ icon, label, isChosen, onClick, url }) {
+function NavigationItem({ icon, label, isChosen, url }) {
     return (
-        <div className={styles.itemContainer} onClick={onClick}>
+        <div className={styles.itemContainer}>
             <Link style={{ textDecoration: 'none', color: 'black' }} to={url}>
                 <div className={isChosen ? `${styles.chosenItem} ${styles.item}` : styles.item}>
                     <div className={styles.imageContainer}>

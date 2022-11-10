@@ -14,7 +14,7 @@ function Login() {
 
     const [errorMessage, setErrorMessage] = useState('');
 
-    async function onSignIn() {
+    async function handleSignIn() {
         try {
             // const { data } = await axios.post('http://localhost:4444/api/auth/login', { email, password });
             // dispatch(setToken("Bearer " + data.token));
@@ -37,7 +37,7 @@ function Login() {
                     <input type="email" placeholder="Email" onChange={(event) => setEmail(event.target.value)} />
                     <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
                 </div>
-                <ConfirmationButton value="Login" onClick={onSignIn} />
+                <ConfirmationButton value="Login" onClick={handleSignIn} />
             </div>
             <div className={styles.registerContainer}>
                 <span>Don't have an account yet?</span>

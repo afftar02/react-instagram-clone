@@ -19,7 +19,7 @@ function Registration() {
     const [emailPlaceholderClass, setEmailPlaceholderClass] = useState('');
     const [passwordPlaceholderClass, setPasswordPlaceholderClass] = useState('');
 
-    async function onSignUp() {
+    async function handleSignUp() {
         try {
             // const { data } = await axios.post('http://localhost:4444/api/auth/register', { name, email, password });
             // dispatch(setToken("Bearer " + data.token));
@@ -63,7 +63,7 @@ function Registration() {
                     <input type="email" className={emailPlaceholderClass} placeholder={emailPlaceholder} value={email} onChange={(event) => setEmail(event.target.value)} />
                     <input type="password" className={passwordPlaceholderClass} placeholder={passwordPlaceholder} value={password} onChange={(event) => setPassword(event.target.value)} />
                 </div>
-                <ConfirmationButton value="Register" onClick={onSignUp} />
+                <ConfirmationButton value="Register" onClick={handleSignUp} />
             </div>
             <div className={styles.loginContainer}>
                 <span>Have an account?</span>
