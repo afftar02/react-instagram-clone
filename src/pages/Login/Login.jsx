@@ -22,8 +22,8 @@ function Login() {
     async function handleSignIn() {
         try {
             const response = await dispatch(login(form));
-            localStorage.setItem("access_token", response.accessToken);
-            localStorage.setItem("refresh_token", response.refreshToken);
+            localStorage.setItem("access_token", response.payload.accessToken);
+            localStorage.setItem("refresh_token", response.payload.refreshToken);
             navigate('/home');
         } catch (err) {
             setErrorMessage('Incorrect email or password');
