@@ -6,42 +6,6 @@
     justify-content: center;
     align-items: center;
 
-    .container {
-        width: 500px;
-        height: 500px;
-        background-color: white;
-        border: 1px solid rgb(219, 219, 219);
-        border-radius: 5px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        img {
-            margin-bottom: 50px;
-        }
-        .inputContainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            input {
-                margin: 0 40px 10px;
-                width: 250px;
-                height: 40px;
-                background-color: #f3f3f3;
-                border-radius: 5px;
-                border: 1px solid #eaeaea;
-                padding: 0 16px;
-                transition: box-shadow 0.2s ease-in-out;
-                &:focus {
-                    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.02);
-                    outline: none !important;
-                    border: 1px solid rgb(207, 217, 222);
-                }
-            }
-        }
-    }
-
     .registerContainer {
         background-color: white;
         border: 1px solid rgb(219, 219, 219);
