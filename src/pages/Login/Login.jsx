@@ -2,21 +2,18 @@ import React, { useState } from 'react';
 import styles from './Login.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm/AuthForm';
-import { useDispatch } from 'react-redux';
-import { login } from '../../redux/slices/authSlice';
+import { AuthContext } from '../..';
 
 function Login() {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
+    const { login } = React.useContext(AuthContext)
 
     const [errorMessageOpacity, setErrorMessageOpacity] = useState('0');
     const [errorMessage, setErrorMessage] = useState('');
 
     async function handleSignIn(data) {
         try {
-            const response = await dispatch(login(data));
-            localStorage.setItem("access_token", response.payload.accessToken);
-            localStorage.setItem("refresh_token", response.payload.refreshToken);
+            await login(data);
             navigate('/home');
         } catch (err) {
             setErrorMessage('Authorization error');

@@ -3,21 +3,18 @@ import styles from './Registration.module.scss';
 import { Link } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm/AuthForm';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { register } from '../../redux/slices/authSlice';
+import { AuthContext } from '../..';
 
 function Registration() {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
+    const { register } = React.useContext(AuthContext);
 
     const [errorMessageOpacity, setErrorMessageOpacity] = React.useState('0');
     const [errorMessage, setErrorMessage] = React.useState('');
 
     async function handleSignUp(data) {
         try {
-            const response = await dispatch(register(data));
-            localStorage.setItem("access_token", response.payload.accessToken);
-            localStorage.setItem("refresh_token", response.payload.refreshToken);
+            await register(data);
             navigate('/home');
         } catch (err) {
             setErrorMessage('Registration error');
