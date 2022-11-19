@@ -8,6 +8,16 @@ function Auth({ children }) {
     const [isAuth, setIsAuth] = React.useState(false);
     const [user, setUser] = React.useState({});
 
+    React.useEffect(() => {
+        (async () => {
+            if (localStorage.getItem('tokens')) {
+                setIsAuth(true);
+                const userData = await getCurrentUser();
+                setUser(userData);
+            }
+        })();
+    }, []);
+
     const login = async (data) => {
         await loginUser(data);
         setIsAuth(true);
