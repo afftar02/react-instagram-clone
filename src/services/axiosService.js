@@ -2,7 +2,9 @@ import axios from 'axios';
 
 const axiosInstance = axios.create();
 
-const getSessionFromStorage = () => localStorage.getItem('tokens');
+const getSessionFromStorage = () => JSON.parse(localStorage.getItem('tokens'));
+
+const baseUrl = 'http://localhost:4444/api';
 
 // фабрика создания запросов
 export const request = async ({
@@ -26,7 +28,7 @@ export const request = async ({
       method,
       data,
       params,
-      url,
+      url: baseUrl + url,
     };
   
     try {

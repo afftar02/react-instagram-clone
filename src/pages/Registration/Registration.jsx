@@ -3,7 +3,7 @@ import styles from './Registration.module.scss';
 import { Link } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm/AuthForm';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../..';
+import { AuthContext } from '../../auth/Auth';
 
 function Registration() {
     const navigate = useNavigate();
