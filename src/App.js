@@ -14,7 +14,7 @@ function App() {
     <div className="wrapper">
       <Auth>
         <Routes>
-          <Route exact path="/" element={<Navigate to="/login" />} />
+          <Route path="*" element={<Navigate to="/login" />} />
           <Route exact path="/registration" element={
             <UnauthorizedRoute>
               <Registration />
