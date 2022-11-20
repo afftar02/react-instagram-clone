@@ -7,6 +7,7 @@ export const AuthContext = React.createContext({});
 function Auth({ children }) {
     const [isAuth, setIsAuth] = React.useState(false);
     const [user, setUser] = React.useState({});
+    const [isAuthChecked, setIsAuthChecked] = React.useState(false);
 
     React.useEffect(() => {
         (async () => {
@@ -15,6 +16,7 @@ function Auth({ children }) {
                 const userData = await getCurrentUser();
                 setUser(userData);
             }
+            setIsAuthChecked(true);
         })();
     }, []);
 
@@ -41,7 +43,7 @@ function Auth({ children }) {
 
     return (
         <AuthContext.Provider value={{ isAuth, user, register, login, logout, getUserName }}>
-            {children}
+            {isAuthChecked && children}
         </AuthContext.Provider>
     )
 };
