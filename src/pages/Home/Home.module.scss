@@ -1,0 +1,17 @@
+.homeContainer {
+    margin-left: 305px;
+    background-color: rgb(250, 250, 250);
+    flex: 1;
+    display: flex;
+    height: fit-content;
+    .postsBlock {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 0;
+    }
+    .infoBlock{
+        width: 450px;
+    }
+}
