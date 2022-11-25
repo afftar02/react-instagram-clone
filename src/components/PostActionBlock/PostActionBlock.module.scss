@@ -1,0 +1,70 @@
+.bottomBlock {
+    display: flex;
+    flex-direction: column;
+    .likeSection {
+        padding: 0 12px;
+        margin-top: 5px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        svg {
+            cursor: pointer;
+        }
+    }
+    .likeAmountSection {
+        padding: 0 12px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        font-family: "Roboto Serif", serif;
+        font-weight: 600;
+    }
+    .descriptionSection {
+        padding: 0 12px;
+        font-family: "Roboto Serif", serif;
+        .nickname {
+            display: inline;
+            margin-right: 5px;
+            font-weight: 600;
+        }
+        .commentsLink {
+            cursor: pointer;
+            margin: 15px 0;
+            color: rgb(142, 142, 142);
+        }
+    }
+    .timeSection {
+        padding: 0 12px;
+        font-family: "Roboto Serif", serif;
+        font-size: 12px;
+        line-height: 12px;
+        color: rgb(142, 142, 142);
+        margin-bottom: 10px;
+    }
+    .addCommentSection {
+        padding: 5px 12px;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        border-top: 1px solid rgb(219, 219, 219);
+        font-family: "Roboto Serif", serif;
+        input {
+            outline: none;
+            border: none;
+            flex-grow: 1;
+            font-size: 18px;
+            &::placeholder {
+                color: rgb(142, 142, 142);
+            }
+        }
+        button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: rgb(0, 149, 246);
+            font-weight: 600;
+            font-size: 16px;
+        }
+    }
+}
