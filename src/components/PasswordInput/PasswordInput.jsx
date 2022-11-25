@@ -1,9 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import styles from './PasswordInput.module.scss';
 
 function PasswordInput({ validation, placeholder, errorMessage }) {
-    const [password, setPassword] = React.useState('');
-    const [showed, setShowed] = React.useState(false);
+    const [password, setPassword] = useState('');
+    const [showed, setShowed] = useState(false);
 
     return (
         <div className={styles.inputContainer}>

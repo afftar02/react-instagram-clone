@@ -1,8 +1,9 @@
-import React from 'react';
 import styles from './Profile.module.scss';
 import Navigation from '../../components/Navigation/Navigation';
 
 function Profile() {
+  // const { id } = useParams();
+
   return (
     <>
       <Navigation />

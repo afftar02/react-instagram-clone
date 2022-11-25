@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './ConfirmationButton.module.scss';
 
 function ConfirmationButton({ value, onClick }) {

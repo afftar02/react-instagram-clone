@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './Login.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm/AuthForm';
-import { AuthContext } from '../../auth/Auth';
+import { useAuth } from '../../auth/Auth';
 
 function Login() {
     const navigate = useNavigate();
-    const { login } = React.useContext(AuthContext);
+    const { login } = useAuth();
 
     const [errorMessageOpacity, setErrorMessageOpacity] = useState('0');
     const [errorMessage, setErrorMessage] = useState('');

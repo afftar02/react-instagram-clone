@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './AuthForm.module.scss';
 import { useForm } from "react-hook-form";
 import ConfirmationButton from '../../components/ConfirmationButton/ConfirmationButton';

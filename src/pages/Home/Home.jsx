@@ -1,13 +1,13 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Home.module.scss';
 import Navigation from '../../components/Navigation/Navigation';
 import Post from '../../components/Post/Post';
 import { getAllPosts } from '../../services/postService';
 
 function Home() {
-  const [posts, setPosts] = React.useState([]);
+  const [posts, setPosts] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     (async () => {
       const response = await getAllPosts();
       setPosts(response);
@@ -21,6 +21,7 @@ function Home() {
         <div className={styles.postsBlock}>
           {posts.map((post) => (
             <Post
+              key={post.id}
               description={post.description}
               createdAt={post.createdAt}
               user={post.user}

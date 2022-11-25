@@ -1,16 +1,16 @@
-import React from 'react';
+import { useState } from 'react';
 import styles from './Registration.module.scss';
 import { Link } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm/AuthForm';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../auth/Auth';
+import { useAuth } from '../../auth/Auth';
 
 function Registration() {
     const navigate = useNavigate();
-    const { register } = React.useContext(AuthContext);
+    const { register } = useAuth();
 
-    const [errorMessageOpacity, setErrorMessageOpacity] = React.useState('0');
-    const [errorMessage, setErrorMessage] = React.useState('');
+    const [errorMessageOpacity, setErrorMessageOpacity] = useState('0');
+    const [errorMessage, setErrorMessage] = useState('');
 
     async function handleSignUp(data) {
         try {

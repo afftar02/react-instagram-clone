@@ -1,10 +1,10 @@
-import React from 'react';
+import { useState } from 'react';
 import styles from './Post.module.scss';
 
 import { FavoriteBorder, Favorite } from '@mui/icons-material';
 
 function Post({ description, createdAt, user, likesAmount, isLiked, commentsAmount }) {
-  const [liked, setLiked] = React.useState(isLiked);
+  const [liked, setLiked] = useState(isLiked);
 
   return (
     <div className={styles.post}>
@@ -12,7 +12,7 @@ function Post({ description, createdAt, user, likesAmount, isLiked, commentsAmou
         <div className={styles.avatar}>
           <img src='img/me.jpg' alt='' />
         </div>
-        <span>{user.firstName + ' ' + user.lastName}</span>
+        <span>{user.firstName} {user.lastName}</span>
       </div>
       <div className={styles.contentBlock} onDoubleClick={() => setLiked(true)}>
         <img src='img/supafast-setup.jpg' alt='' />

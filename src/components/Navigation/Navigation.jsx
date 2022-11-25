@@ -1,34 +1,36 @@
-import React from 'react';
 import styles from './Navigation.module.scss';
 import { Link, useLocation } from 'react-router-dom';
-import NavigationItem from '../NavigationItem/NavigationItem';
 
 import { HomeOutlined, HomeRounded, AddBoxOutlined, AddBoxRounded, AccountCircleOutlined, AccountCircleRounded } from '@mui/icons-material';
-
-const navItems = [
-    {
-        url: '/home',
-        icon: <HomeOutlined sx={{ fontSize: 35 }} />,
-        chosenIcon: <HomeRounded sx={{ fontSize: 35 }} />,
-        label: 'Home'
-    },
-    {
-        url: '/create',
-        icon: <AddBoxOutlined sx={{ fontSize: 35 }} />,
-        chosenIcon: <AddBoxRounded sx={{ fontSize: 35 }} />,
-        label: 'Create'
-    },
-    {
-        url: '/profile',
-        icon: <AccountCircleOutlined sx={{ fontSize: 35 }} />,
-        chosenIcon: <AccountCircleRounded sx={{ fontSize: 35 }} />,
-        label: 'Profile'
-    }
-];
+import NavigationItem from '../NavigationItem/NavigationItem';
+import { useAuth } from '../../auth/Auth';
 
 function Navigation() {
     const location = useLocation();
     const currentUrl = location.pathname;
+
+    const { user } = useAuth();
+
+    const navItems = [
+        {
+            url: '/home',
+            icon: <HomeOutlined sx={{ fontSize: 35 }} />,
+            chosenIcon: <HomeRounded sx={{ fontSize: 35 }} />,
+            label: 'Home'
+        },
+        {
+            url: '/post/create',
+            icon: <AddBoxOutlined sx={{ fontSize: 35 }} />,
+            chosenIcon: <AddBoxRounded sx={{ fontSize: 35 }} />,
+            label: 'Create'
+        },
+        {
+            url: `/profile/${user.id}`,
+            icon: <AccountCircleOutlined sx={{ fontSize: 35 }} />,
+            chosenIcon: <AccountCircleRounded sx={{ fontSize: 35 }} />,
+            label: 'Profile'
+        }
+    ];
 
     return (
         <div className={styles.navContainer}>

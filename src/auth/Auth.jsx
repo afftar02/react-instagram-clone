@@ -1,15 +1,17 @@
-import React from 'react';
+import { useState, useEffect, createContext, useContext } from 'react';
 import { registerUser, loginUser } from '../services/authService';
 import { getCurrentUser } from '../services/userService';
 
-export const AuthContext = React.createContext({});
+const AuthContext = createContext({});
+
+export const useAuth = () => useContext(AuthContext);
 
 function Auth({ children }) {
-    const [isAuth, setIsAuth] = React.useState(false);
-    const [user, setUser] = React.useState({});
-    const [isAuthChecked, setIsAuthChecked] = React.useState(false);
+    const [isAuth, setIsAuth] = useState(false);
+    const [user, setUser] = useState({});
+    const [isAuthChecked, setIsAuthChecked] = useState(false);
 
-    React.useEffect(() => {
+    useEffect(() => {
         (async () => {
             if (localStorage.getItem('tokens')) {
                 setIsAuth(true);
