@@ -1,19 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,600&display=swap");
 
 .itemContainer {
     cursor: pointer;
-    padding: 4px 0;
+    margin: 8px 0;
     width: 100%;
     border-radius: 9999px;
     transition: background-color 0.2s ease-in-out;
     &:hover {
         background-color: rgba(159, 161, 167, 0.1);
     }
+    @media (max-width: 700px) {
+        margin: 0;
+        .item{
+            justify-content: center;
+        }
+    }
     .item {
         display: flex;
         align-items: center;
-        padding: 12px;
+        padding: 8px;
         margin: 8px 0;
+        @media (max-width: 1400px) {
+            margin: 5px;
+            .labelContainer {
+                display: none;
+            }
+        }
         .imageContainer {
             display: flex;
             align-items: center;

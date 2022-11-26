@@ -9,6 +9,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media(max-width: 550px){
+        width: 350px;
+    }
     img {
         margin: 15px 0;
     }
