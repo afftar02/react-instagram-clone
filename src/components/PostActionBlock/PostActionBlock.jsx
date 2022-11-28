@@ -2,11 +2,11 @@ import styles from './PostActionBlock.module.scss';
 
 import { FavoriteBorder, Favorite } from '@mui/icons-material';
 
-function PostActionBlock({ likesAmount, description, commentsAmount, liked, onLikeClick }) {
+function PostActionBlock({ liked, onLike, likesAmount, description, commentsAmount }) {
     return (
         <div className={styles.bottomBlock}>
             <div className={styles.likeSection}>
-                {liked ? <Favorite sx={{ fontSize: 35, color: 'red' }} onClick={onLikeClick} /> : <FavoriteBorder sx={{ fontSize: 35 }} onClick={onLikeClick} />}
+                {liked ? <Favorite sx={{ fontSize: 35, color: 'red' }} onClick={onLike} /> : <FavoriteBorder sx={{ fontSize: 35 }} onClick={onLike} />}
             </div>
             <div className={styles.likeAmountSection}>
                 <span>{likesAmount} likes</span>

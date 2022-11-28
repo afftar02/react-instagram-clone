@@ -1,8 +1,8 @@
 import styles from './PostContent.module.scss';
 
-function PostContent({ onDoubleClick }) {
+function PostContent() {
     return (
-        <div className={styles.contentBlock} onDoubleClick={onDoubleClick}>
+        <div className={styles.contentBlock}>
             <img src='img/supafast-setup.jpg' alt='' />
         </div>
     )

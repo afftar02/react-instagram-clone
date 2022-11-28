@@ -1,12 +1,17 @@
+import { Link } from 'react-router-dom';
 import styles from './PostHeader.module.scss';
 
 function PostHeader({ user }) {
     return (
         <div className={styles.userBlock}>
-            <div className={styles.avatar}>
-                <img src='img/me.jpg' alt='' />
-            </div>
-            <span>{user.firstName} {user.lastName}</span>
+            <Link to={`/profile/${user.id}`} style={{ textDecoration: 'none' }}>
+                <div className={styles.avatar}>
+                    <img src='img/me.jpg' alt='' />
+                </div>
+            </Link>
+            <Link to={`/profile/${user.id}`} style={{ textDecoration: 'none', color: 'black' }}>
+                <span>{user.firstName} {user.lastName}</span>
+            </Link>
         </div>
     )
 };

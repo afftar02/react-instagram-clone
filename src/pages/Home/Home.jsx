@@ -20,15 +20,7 @@ function Home() {
       <div className={styles.homeContainer}>
         <div className={styles.postsBlock}>
           {posts.map((post) => (
-            <Post
-              key={post.id}
-              description={post.description}
-              createdAt={post.createdAt}
-              user={post.user}
-              likesAmount={post.likesAmount}
-              isLiked={post.isLiked}
-              commentsAmount={post.commentsAmount}
-            />
+            <Post key={post.id} post={post} />
           ))}
         </div>
         <div className={styles.infoBlock}>
