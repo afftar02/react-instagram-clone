@@ -25,7 +25,7 @@ function PostActionBlock({ liked, onLike, likesAmount, onAddComment, description
                     <span>{description}</span>
                 </div>
                 <div className={styles.commentsLink}>
-                    <span>View all {commentsAmount} comments</span>
+                    {commentsAmount > 0 && <span>View all {commentsAmount} comments</span>}
                 </div>
             </div>
             <div className={styles.timeSection}>
