@@ -1,8 +1,16 @@
+import { useState } from 'react';
 import styles from './PostActionBlock.module.scss';
 
 import { FavoriteBorder, Favorite } from '@mui/icons-material';
 
-function PostActionBlock({ liked, onLike, likesAmount, description, commentsAmount }) {
+function PostActionBlock({ liked, onLike, likesAmount, onAddComment, description, commentsAmount }) {
+    const [comment, setComment] = useState('');
+
+    function handleComment() {
+        onAddComment(comment);
+        setComment('');
+    }
+
     return (
         <div className={styles.bottomBlock}>
             <div className={styles.likeSection}>
@@ -24,8 +32,8 @@ function PostActionBlock({ liked, onLike, likesAmount, description, commentsAmou
                 <span>5 HOURS AGO</span>
             </div>
             <div className={styles.addCommentSection}>
-                <input type="text" placeholder='Add a comment...' />
-                <button>Post</button>
+                <input type="text" placeholder='Add a comment...' value={comment} onChange={(event) => setComment(event.target.value)} />
+                <button onClick={handleComment}>Post</button>
             </div>
         </div>
     )
