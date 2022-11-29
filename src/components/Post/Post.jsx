@@ -6,11 +6,11 @@ import PostActionBlock from '../PostActionBlock/PostActionBlock';
 import usePostActions from '../../hooks/usePostActions';
 
 function Post({ post }) {
-  const { handleLike, liked, likesAmount, addComment, commentsAmount } = usePostActions({ post });
+  const { user, handleLike, liked, likesAmount, addComment, commentsAmount, date, description } = usePostActions({ post });
 
   return (
     <div className={styles.post}>
-      <PostHeader user={post.user} />
+      <PostHeader user={user} />
       <PostContent />
       <PostActionBlock
         liked={liked}
@@ -18,7 +18,8 @@ function Post({ post }) {
         likesAmount={likesAmount}
         onAddComment={addComment}
         commentsAmount={commentsAmount}
-        description={post.description}
+        date={date}
+        description={description}
       />
     </div>
   )

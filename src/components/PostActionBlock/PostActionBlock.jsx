@@ -3,7 +3,7 @@ import styles from './PostActionBlock.module.scss';
 
 import { FavoriteBorder, Favorite } from '@mui/icons-material';
 
-function PostActionBlock({ liked, onLike, likesAmount, onAddComment, description, commentsAmount }) {
+function PostActionBlock({ liked, onLike, likesAmount, onAddComment, description, commentsAmount, date }) {
     const [comment, setComment] = useState('');
 
     function handleComment() {
@@ -29,7 +29,7 @@ function PostActionBlock({ liked, onLike, likesAmount, onAddComment, description
                 </div>
             </div>
             <div className={styles.timeSection}>
-                <span>5 HOURS AGO</span>
+                <span>{date} AGO</span>
             </div>
             <div className={styles.addCommentSection}>
                 <input type="text" placeholder='Add a comment...' value={comment} onChange={(event) => setComment(event.target.value)} />
