@@ -1,4 +1,5 @@
-.bottomBlock {
+.actionBlock{
+    border-top: 1px solid rgb(219, 219, 219);
     display: flex;
     flex-direction: column;
     .iconsSection {
@@ -22,20 +23,6 @@
         margin-bottom: 8px;
         font-family: "Roboto Serif", serif;
         font-weight: 600;
-    }
-    .descriptionSection {
-        padding: 0 12px;
-        font-family: "Roboto Serif", serif;
-        .nickname {
-            display: inline;
-            margin-right: 5px;
-            font-weight: 600;
-        }
-        .commentsLink {
-            cursor: pointer;
-            margin: 15px 0;
-            color: rgb(142, 142, 142);
-        }
     }
     .timeSection {
         padding: 0 12px;

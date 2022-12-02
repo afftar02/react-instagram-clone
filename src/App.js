@@ -7,6 +7,7 @@ import Create from './pages/Create/Create';
 import Profile from './pages/Profile/Profile';
 import AuthorizedRoutes from './utils/AuthorizedRoutes';
 import UnauthorizedRoutes from './utils/UnauthorizedRoutes';
+import SinglePost from './pages/SinglePost/SinglePost';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/post/create" element={<Create />} />
             <Route exact path="/profile/:id" element={<Profile />} />
+            <Route exact path="/post/:id" element={<SinglePost />} />
           </Routes>
         </AuthorizedRoutes>
       </Auth>

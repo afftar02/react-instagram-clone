@@ -1,15 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { addLike, removeLike } from '../services/likeService';
 import { createComment } from '../services/commentService';
+import useDate from './useDate';
 
-function usePostActions({ id, post }) {
+function usePostActions(post) {
     const [liked, setLiked] = useState(post.isLiked);
     const [likesAmount, setLikesAmount] = useState(post.likesAmount);
     const [commentsAmount, setCommentsAmount] = useState(post.commentsAmount);
-    const [date, setDate] = useState('');
-
-    // eslint-disable-next-line
-    useEffect(() => calculateDate(), []);
 
     const handleLike = async () => {
         if (!liked) {
@@ -28,26 +25,7 @@ function usePostActions({ id, post }) {
         setCommentsAmount(commentsAmount + 1);
     };
 
-    const calculateDate = () => {
-        const daysAmount = new Date().getDate() - new Date(post.createdAt).getDate();
-        const hoursAmount = new Date().getHours() - new Date(post.createdAt).getHours();
-        const minutesAmount = new Date().getMinutes() - new Date(post.createdAt).getMinutes();
-
-        if (daysAmount > 0) {
-            setDate(daysAmount + ' DAYS');
-        }
-        else if (hoursAmount > 0) {
-            setDate(hoursAmount + ' HOURS');
-        }
-        else if (minutesAmount > 0) {
-            setDate(minutesAmount + ' MINUTES');
-        }
-        else {
-            setDate('FEW SECONDS');
-        }
-    };
-
-    return { user: post.user, handleLike, addComment, liked, likesAmount, commentsAmount, date, description: post.description };
+    return { handleLike, addComment, liked, likesAmount, commentsAmount, date: useDate(post.createdAt) };
 };
 
 export default usePostActions;

@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './PostActionBlock.module.scss';
 
-import { FavoriteBorder, Favorite } from '@mui/icons-material';
+import { FavoriteBorder, Favorite, ModeCommentOutlined } from '@mui/icons-material';
 
-function PostActionBlock({ liked, onLike, likesAmount, onAddComment, description, commentsAmount, date }) {
+function PostActionBlock({ id, liked, onLike, likesAmount, onAddComment, description, commentsAmount, date }) {
     const [comment, setComment] = useState('');
 
     function handleComment() {
@@ -13,8 +14,11 @@ function PostActionBlock({ liked, onLike, likesAmount, onAddComment, description
 
     return (
         <div className={styles.bottomBlock}>
-            <div className={styles.likeSection}>
+            <div className={styles.iconsSection}>
                 {liked ? <Favorite sx={{ fontSize: 35, color: 'red' }} onClick={onLike} /> : <FavoriteBorder sx={{ fontSize: 35 }} onClick={onLike} />}
+                <Link to={`/post/${id}`} style={{ color: 'black' }}>
+                    <ModeCommentOutlined sx={{ fontSize: 33 }} className={styles.commentIcon} />
+                </Link>
             </div>
             <div className={styles.likeAmountSection}>
                 <span>{likesAmount} likes</span>
@@ -24,9 +28,11 @@ function PostActionBlock({ liked, onLike, likesAmount, onAddComment, description
                     <span className={styles.nickname}>Nikita Steckij</span>
                     <span>{description}</span>
                 </div>
-                <div className={styles.commentsLink}>
-                    {commentsAmount > 0 && <span>View all {commentsAmount} comments</span>}
-                </div>
+                <Link to={`/post/${id}`} style={{ textDecoration: 'none' }}>
+                    <div className={styles.commentsLink}>
+                        {commentsAmount > 0 && <span>View all {commentsAmount} comments</span>}
+                    </div>
+                </Link>
             </div>
             <div className={styles.timeSection}>
                 <span>{date} AGO</span>
