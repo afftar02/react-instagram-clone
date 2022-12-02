@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './Registration.module.scss';
-import { Link } from 'react-router-dom';
+import CustomLink from '../../components/CustomLink/CustomLink';
 import AuthForm from '../../components/AuthForm/AuthForm';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../auth/Auth';
@@ -31,9 +31,9 @@ function Registration() {
             <AuthForm type='registration' onSubmit={handleSignUp} />
             <div className={styles.loginContainer}>
                 <span>Have an account?</span>
-                <Link to='/login' style={{ textDecoration: 'none' }}>
+                <CustomLink to='/login'>
                     <span className={styles.loginLink}>Login</span>
-                </Link>
+                </CustomLink>
             </div>
             <div className={styles.errorMessage} style={{ opacity: errorMessageOpacity }}>
                 <span>{errorMessage}</span>

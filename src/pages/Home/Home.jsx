@@ -3,7 +3,7 @@ import styles from './Home.module.scss';
 import Navigation from '../../components/Navigation/Navigation';
 import Post from '../../components/Post/Post';
 import { getAllPosts } from '../../services/postService';
-import { Link } from 'react-router-dom';
+import CustomLink from '../../components/CustomLink/CustomLink';
 import { useAuth } from '../../auth/Auth';
 
 function Home() {
@@ -29,14 +29,14 @@ function Home() {
         </div>
         <div className={styles.infoBlock}>
           <div className={styles.userBlock}>
-            <Link to={`/profile/${user.id}`} style={{ textDecoration: 'none' }}>
+            <CustomLink to={`/profile/${user.id}`}>
               <div className={styles.avatar}>
                 <img src='img/me.jpg' alt='' />
               </div>
-            </Link>
-            <Link to={`/profile/${user.id}`} style={{ textDecoration: 'none', color: 'black' }}>
+            </CustomLink>
+            <CustomLink to={`/profile/${user.id}`}>
               <span>{getUserName()}</span>
-            </Link>
+            </CustomLink>
           </div>
         </div>
       </div>

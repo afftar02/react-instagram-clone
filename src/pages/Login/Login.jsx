@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import styles from './Login.module.scss';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import AuthForm from '../../components/AuthForm/AuthForm';
 import { useAuth } from '../../auth/Auth';
+import CustomLink from '../../components/CustomLink/CustomLink';
 
 function Login() {
     const navigate = useNavigate();
@@ -30,9 +31,9 @@ function Login() {
             <AuthForm type='login' onSubmit={handleSignIn} />
             <div className={styles.registerContainer}>
                 <span>Don't have an account yet?</span>
-                <Link to='/registration' style={{ textDecoration: 'none' }}>
+                <CustomLink to='/registration'>
                     <span className={styles.registerLink}>Register</span>
-                </Link>
+                </CustomLink>
             </div>
             <div className={styles.errorMessage} style={{ opacity: errorMessageOpacity }}>
                 <span>{errorMessage}</span>

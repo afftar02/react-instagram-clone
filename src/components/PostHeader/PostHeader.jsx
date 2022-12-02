@@ -1,17 +1,17 @@
-import { Link } from 'react-router-dom';
+import CustomLink from '../CustomLink/CustomLink';
 import styles from './PostHeader.module.scss';
 
 function PostHeader({ user }) {
     return (
         <div className={styles.userBlock}>
-            <Link to={`/profile/${user.id}`} style={{ textDecoration: 'none' }}>
+            <CustomLink to={`/profile/${user.id}`}>
                 <div className={styles.avatar}>
                     <img src='img/me.jpg' alt='' />
                 </div>
-            </Link>
-            <Link to={`/profile/${user.id}`} style={{ textDecoration: 'none', color: 'black' }}>
+            </CustomLink>
+            <CustomLink to={`/profile/${user.id}`}>
                 <span>{user.firstName} {user.lastName}</span>
-            </Link>
+            </CustomLink>
         </div>
     )
 };

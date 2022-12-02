@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import CustomLink from '../CustomLink/CustomLink';
 import useDate from '../../hooks/useDate';
 import styles from './Comment.module.scss';
 
@@ -7,16 +7,16 @@ function Comment({ user, text, createdAt }) {
 
     return (
         <div className={styles.comment}>
-            <Link to={`/profile/${user.id}`} style={{ textDecoration: 'none' }}>
+            <CustomLink to={`/profile/${user.id}`}>
                 <div className={styles.avatar}>
                     <img src='/img/me.jpg' alt='' />
                 </div>
-            </Link>
+            </CustomLink>
             <div className={styles.infoBlock}>
                 <div className={styles.textBlock}>
-                    <Link to={`/profile/${user.id}`} style={{ textDecoration: 'none', color: 'black' }}>
+                    <CustomLink to={`/profile/${user.id}`}>
                         <span className={styles.nickname}>{user.firstName} {user.lastName}</span>
-                    </Link>
+                    </CustomLink>
                     <span>{text}</span>
                 </div>
                 <div className={styles.timeSection}>
