@@ -6,7 +6,7 @@ import FullPostActionBlock from '../FullPostActionBlock/FullPostActionBlock';
 import styles from './FullPost.module.scss';
 
 function FullPost({ post }) {
-    const { handleLike, liked, likesAmount, addComment, date } = usePostActions(post);
+    const { handleLike, liked, likesAmount, addComment, date, commentsAmount } = usePostActions(post);
 
     return (
         <div className={styles.post}>
@@ -20,6 +20,7 @@ function FullPost({ post }) {
                     user={post.user}
                     description={post.description}
                     createdAt={post.createdAt}
+                    commentsAmount={commentsAmount}
                 />
                 <FullPostActionBlock
                     liked={liked}

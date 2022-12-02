@@ -4,7 +4,7 @@ import Comment from '../Comment/Comment';
 import { getPostComments } from '../../services/commentService';
 import styles from './FullPostInfoBlock.module.scss';
 
-function FullPostInfoBlock({ id, user, description, createdAt }) {
+function FullPostInfoBlock({ id, user, description, createdAt, commentsAmount }) {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
@@ -12,7 +12,7 @@ function FullPostInfoBlock({ id, user, description, createdAt }) {
             const response = await getPostComments(id);
             setComments(response);
         })();
-    }, [id]);
+    }, [id, commentsAmount]);
 
     return (
         <div className={styles.infoBlock}>
