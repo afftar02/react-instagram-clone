@@ -1,6 +1,10 @@
 .infoBlock {
     flex: 1;
     overflow-y: scroll;
+    @media (max-width: 900px) {
+        flex: auto;
+        height: 215px;
+    }
     &::-webkit-scrollbar {
         display: none;
     }

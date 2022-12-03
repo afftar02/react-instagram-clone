@@ -1,6 +1,25 @@
 .post {
     display: flex;
     height: 700px;
+    @media (max-width: 1100px) {
+        height: 600px;
+        .rightBlock {
+            width: 350px !important;
+        }
+    }
+    @media (max-width: 900px) {
+        flex-direction: column;
+        height: fit-content;
+        width: 600px;
+        margin: 15px 0;
+        .rightBlock {
+            width: 100% !important;
+        }
+    }
+    @media (max-width: 700px) {
+        margin-top: 20px;
+        margin-bottom: 70px;
+    }
     .rightBlock {
         display: flex;
         flex-direction: column;
