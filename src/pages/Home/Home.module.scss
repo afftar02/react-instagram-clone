@@ -4,7 +4,6 @@
     flex: 1;
     display: flex;
     justify-content: center;
-    height: fit-content;
     @media (max-width: 1300px) {
         margin-left: 86px;
         padding-right: 0;
@@ -33,5 +32,10 @@
     }
     .infoBlock {
         padding-top: 50px;
+    }
+    .loading{
+        height: 100vh;
+        display: flex;
+        align-items: center;
     }
 }

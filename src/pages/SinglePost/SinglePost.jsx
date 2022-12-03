@@ -21,7 +21,7 @@ function SinglePost() {
         <>
             <Navigation />
             <div className={styles.singlePostContainer}>
-                {post && <FullPost post={post} />}
+                {post ? <FullPost post={post} /> : <span>Loading...</span>}
             </div>
         </>
     )
