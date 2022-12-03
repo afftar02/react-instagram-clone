@@ -55,9 +55,6 @@ function Navigation() {
                     </nav>
                 </div>
             </div>
-            <div className={styles.bottomContainer}>
-
-            </div>
         </div>
     )
 };

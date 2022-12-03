@@ -8,8 +8,6 @@ function PostHeader({ user }) {
                 <div className={styles.avatar}>
                     <img src='img/me.jpg' alt='' />
                 </div>
-            </CustomLink>
-            <CustomLink to={`/profile/${user.id}`}>
                 <span>{user.firstName} {user.lastName}</span>
             </CustomLink>
         </div>

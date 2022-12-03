@@ -1,7 +1,8 @@
 .userBlock {
-    display: flex;
-    align-items: center;
-    height: 100px;
+    a {
+        display: flex;
+        align-items: center;
+    }
     .avatar {
         cursor: pointer;
         width: 70px;

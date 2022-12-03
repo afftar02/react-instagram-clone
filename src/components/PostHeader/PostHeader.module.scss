@@ -3,6 +3,10 @@
     align-items: center;
     height: 70px;
     margin-left: 12px;
+    a {
+        display: flex;
+        align-items: center;
+    }
     .avatar {
         cursor: pointer;
         width: 32px;
