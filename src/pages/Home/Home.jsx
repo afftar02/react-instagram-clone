@@ -3,13 +3,10 @@ import styles from './Home.module.scss';
 import Navigation from '../../components/Navigation/Navigation';
 import Post from '../../components/Post/Post';
 import { getAllPosts } from '../../services/postService';
-import CustomLink from '../../components/CustomLink/CustomLink';
-import { useAuth } from '../../auth/Auth';
+import CurrentUser from '../../components/CurrentUser/CurrentUser';
 
 function Home() {
   const [posts, setPosts] = useState([]);
-
-  const { user, getUserName } = useAuth();
 
   useEffect(() => {
     (async () => {
@@ -28,16 +25,7 @@ function Home() {
           ))}
         </div>
         <div className={styles.infoBlock}>
-          <div className={styles.userBlock}>
-            <CustomLink to={`/profile/${user.id}`}>
-              <div className={styles.avatar}>
-                <img src='img/me.jpg' alt='' />
-              </div>
-            </CustomLink>
-            <CustomLink to={`/profile/${user.id}`}>
-              <span>{getUserName()}</span>
-            </CustomLink>
-          </div>
+          <CurrentUser />
         </div>
       </div>
     </>
