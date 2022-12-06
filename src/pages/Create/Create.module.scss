@@ -1,0 +1,14 @@
+.createContainer{
+    margin-left: 305px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    @media (max-width: 1300px) {
+        margin-left: 86px;
+    }
+    @media (max-width: 700px) {
+        margin-left: 0;
+    }
+}
