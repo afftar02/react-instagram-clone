@@ -1,0 +1,37 @@
+.userBlock {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    margin: 50px 0;
+    height: 250px;
+    .avatar {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 100px;
+        img {
+            width: 100%;
+        }
+    }
+    .userInfo {
+        font-family: "Roboto Serif", serif;
+        width: 500px;
+        .nicknameBlock {
+            font-size: 28px;
+        }
+        .amountInfoBlock {
+            margin: 40px 0;
+            font-size: 18px;
+            .amount {
+                font-weight: 600;
+            }
+            .property {
+                margin-left: 5px;
+            }
+        }
+    }
+}

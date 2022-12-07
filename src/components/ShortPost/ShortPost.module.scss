@@ -1,0 +1,42 @@
+.post {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    img {
+        width: 100%;
+    }
+    .postInfo {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        color: #fff;
+        font-weight: 600;
+        font-size: 22px;
+        span{
+            margin-left: 5px;
+        }
+        .likes{
+            display: flex;
+            align-items: center;
+        }
+        .comments{
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+        }
+    }
+    &:hover {
+        .postInfo {
+            display: flex;
+        }
+    }
+}
